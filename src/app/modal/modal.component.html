@@ -1,0 +1,56 @@
+<div class="custom-modal" *ngIf="persona">
+    <div class="custom-modal-content">
+        <table>
+            <tr>
+                <td>Id: </td>
+                <td><input id="id_persona" [(ngModel)]="persona.id_persona" placeholder="id" disabled></td>
+            </tr>
+            <tr>
+                <td>Usuario: </td>
+                <td><input id="usuario" [(ngModel)]="persona.usuario" placeholder="usuario" disabled></td>
+            </tr>
+            <tr>
+                <td>Nombre: </td>
+                <td><input id="name" [(ngModel)]="persona.name" placeholder="nombre" disabled></td>
+            </tr>
+            <tr>
+                <td>Apellido: </td>
+                <td><input id="surname" [(ngModel)]="persona.surname" placeholder="apellido" disabled></td>
+            </tr>
+            <tr>
+                <td>Email trabajo: </td>
+                <td><input id="company_email" [(ngModel)]="persona.company_email" placeholder="email trabajo" disabled></td>
+            </tr>
+            <tr>
+                <td>Email personal: </td>
+                <td><input id="personal_email" [(ngModel)]="persona.personal_email" placeholder="email personal" disabled></td>
+            </tr>
+            <tr>
+                <td>Ciudad: </td>
+                <td><input id="city" [(ngModel)]="persona.city" placeholder="ciudad" disabled></td>
+            </tr>
+            <tr>
+                <td>url de la imagen: </td>
+                <td><input id="imagen_url" [(ngModel)]="persona.imagen_url" placeholder="URL imagen" disabled></td>
+            </tr>
+            <tr>
+                <td>Activo: </td>
+                <td><input id="active" type="checkbox" [(ngModel)]="persona.active" placeholder="activo" disabled></td>
+            </tr>
+            <tr>
+                <td>Fecha creación: </td>
+                <td><input id="created_date" type="date" placeholder="fecha de creación" disabled [value]="getDate(persona.created_date)"></td>
+            </tr>
+            <tr>
+                <td>Fecha finalización: </td>
+                <td>
+                    <input 
+                        id="termination_date" type="date" placeholder="fecha de finalización" disabled
+                        [value]="getDate(persona.termination_date)"
+                    >
+                </td>
+            </tr>
+        </table>
+        <button (click)="close.emit()">Cerrar</button>
+    </div>
+</div>

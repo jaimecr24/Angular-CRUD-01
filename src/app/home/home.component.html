@@ -1,0 +1,39 @@
+<button [routerLink]="['add']">Añadir</button>
+<label for="searchText">Nombre:</label>
+<input id="searchText" [(ngModel)]="searchText" placeholder="nombre">
+<p>{{searchText}}</p>
+<table>
+    <tr>
+        <th>id</th>
+        <th>usuario</th>
+        <th>nombre</th>
+        <th>apellido</th>
+        <th>email trabajo</th>
+        <th>email personal</th>
+        <th>ciudad</th>
+        <th>activo</th>
+        <th>url imagen</th>
+        <th>Fecha inicio</th>
+        <th>Fecha fin</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr *ngFor="let persona of listaPersonas.items">
+        <td>{{persona.id_persona}}</td>
+        <td>{{persona.usuario}}</td>
+        <td>{{persona.name}}</td>
+        <td>{{persona.surname}}</td>
+        <td>{{persona.company_email}}</td>
+        <td>{{persona.personal_email}}</td>
+        <td>{{persona.city}}</td>
+        <td>{{persona.active}}</td>
+        <td>{{persona.imagen_url}}</td>
+        <td>{{persona.created_date | date:'dd-MM-YYYY'}}</td>
+        <td>{{persona.termination_date | date:'dd-MM-YYYY'}}</td>
+        <td><button [class.selected]="persona === selectedPersona" type="button" (click)="onSelect(persona)">Detalle</button></td>
+        <td><button [routerLink]="['update', persona.id_persona]">Actualizar</button></td>
+        <td><button [routerLink]="['delete', persona.id_persona]">Eliminar</button></td>
+    </tr>
+</table>
+<app-modal [persona]="selectedPersona" (close)="onCloseModal()" [class.hidden]="hideModal"></app-modal>

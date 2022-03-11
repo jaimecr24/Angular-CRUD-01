@@ -1,0 +1,30 @@
+table {
+    width: 98%;
+    margin: 0 auto 0 auto;
+    border-spacing: 0;
+    border: 1px solid Lightgrey;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+th {
+    text-align: left;
+    background-color: #763626;
+    padding: 2px 4px 2px 4px;
+}
+
+tr {
+    background-color: #336B87;
+}
+
+tr:hover {
+    background-color: #90AFC5;
+}
+
+td {
+    border-top: 1px solid lightgrey;
+    padding: 2px 4px 2px 4px;
+}
+
+.hidden {
+    display:none;
+}
