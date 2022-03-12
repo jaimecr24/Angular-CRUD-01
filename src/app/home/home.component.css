@@ -1,9 +1,10 @@
 table {
     width: 98%;
-    margin: 0 auto 0 auto;
+    margin: 30px auto 0 auto;
     border-spacing: 0;
     border: 1px solid Lightgrey;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.1rem;
 }
 
 th {
@@ -25,6 +26,7 @@ td {
     padding: 2px 4px 2px 4px;
 }
 
-.hidden {
-    display:none;
+.home-header > label {
+    font-size: 1.2rem;
+    padding-left: 20px;
 }

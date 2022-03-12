@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent, NamePipe } from './home/home.component';
 import { ModalComponent } from './modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormPersonaComponent } from './form-persona/form-persona.component';
@@ -15,6 +15,7 @@ import { FormPersonaComponent } from './form-persona/form-persona.component';
     HomeComponent,
     ModalComponent,
     FormPersonaComponent,
+    NamePipe
   ],
   imports: [
     BrowserModule,

@@ -1,69 +1,73 @@
-<h2>{{title}}</h2>
-<form *ngIf="persona">
-    <table>
-        <tr>
-            <td>Id: </td>
-            <td><input name="id_persona" [(ngModel)]="persona.id_persona" placeholder="id" disabled></td>
-        </tr>
-        <tr>
-            <td>Usuario: </td>
-            <td><input name="usuario" [(ngModel)]="persona.usuario" placeholder="usuario" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Contraseña:</td>
-            <td><input name="password" [(ngModel)]="persona.password" placeholder="contraseña" [disabled]="disabled" type="password"></td>
-        </tr>
-        <tr>
-            <td>Nombre: </td>
-            <td><input name="name" [(ngModel)]="persona.name" placeholder="nombre" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Apellido: </td>
-            <td><input name="surname" [(ngModel)]="persona.surname" placeholder="apellido" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Email trabajo: </td>
-            <td><input name="company_email" [(ngModel)]="persona.company_email" placeholder="email trabajo" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Email personal: </td>
-            <td><input name="personal_email" [(ngModel)]="persona.personal_email" placeholder="email personal" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Ciudad: </td>
-            <td><input name="city" [(ngModel)]="persona.city" placeholder="ciudad" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>url de la imagen: </td>
-            <td><input name="imagen_url" [(ngModel)]="persona.imagen_url" placeholder="URL imagen" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Activo: </td>
-            <td><input name="active" type="checkbox" [(ngModel)]="persona.active" placeholder="activo" [disabled]="disabled"></td>
-        </tr>
-        <tr>
-            <td>Fecha creación: </td>
-            <td>
-                <input
-                    name="created_date" type="date" placeholder="fecha de creación" [disabled]="disabled"
-                    [value]="getDate(persona.created_date)"
-                    (change)="persona.created_date = formatDate($event)"
-                >
-            </td>
-        </tr>
-        <tr>
-            <td>Fecha finalización: </td>
-            <td>
-                <input 
-                    name="termination_date" type="date" placeholder="fecha de finalización" [disabled]="disabled"
-                    [value]="getDate(persona.termination_date)"
-                    (change)="persona.termination_date = formatDate($event)"
-                >
-            </td>
-        </tr>
-    </table>
-    <button type="submit" (click)="handleSubmit()">Enviar</button>
-    <button type="button" (click)="handleDelete()">Eliminar</button>
-    <button type="reset">Limpiar</button>
-    <button type="button" (click)="goBack()">Cancelar</button>
-</form>
+<div class="container">
+    <div class="title">{{title}}</div>
+    <form *ngIf="persona">
+        <table>
+            <tr>
+                <td>Id: </td>
+                <td><input name="id_persona" [(ngModel)]="persona.id_persona" placeholder="id" disabled></td>
+            </tr>
+            <tr>
+                <td>Usuario: </td>
+                <td><input name="usuario" [(ngModel)]="persona.usuario" placeholder="usuario" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Contraseña:</td>
+                <td><input name="password" [(ngModel)]="persona.password" placeholder="contraseña" [disabled]="disabled" type="password"></td>
+            </tr>
+            <tr>
+                <td>Nombre: </td>
+                <td><input name="name" [(ngModel)]="persona.name" placeholder="nombre" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Apellido: </td>
+                <td><input name="surname" [(ngModel)]="persona.surname" placeholder="apellido" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Email trabajo: </td>
+                <td><input name="company_email" [(ngModel)]="persona.company_email" placeholder="email trabajo" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Email personal: </td>
+                <td><input name="personal_email" [(ngModel)]="persona.personal_email" placeholder="email personal" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Ciudad: </td>
+                <td><input name="city" [(ngModel)]="persona.city" placeholder="ciudad" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>url de la imagen: </td>
+                <td><input name="imagen_url" [(ngModel)]="persona.imagen_url" placeholder="URL imagen" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Activo: </td>
+                <td><input name="active" type="checkbox" [(ngModel)]="persona.active" placeholder="activo" [disabled]="disabled"></td>
+            </tr>
+            <tr>
+                <td>Fecha creación: </td>
+                <td>
+                    <input
+                        name="created_date" type="date" placeholder="fecha de creación" [disabled]="disabled"
+                        [value]="getDate(persona.created_date)"
+                        (change)="persona.created_date = formatDate($event)"
+                    >
+                </td>
+            </tr>
+            <tr>
+                <td>Fecha finalización: </td>
+                <td>
+                    <input 
+                        name="termination_date" type="date" placeholder="fecha de finalización" [disabled]="disabled"
+                        [value]="getDate(persona.termination_date)"
+                        (change)="persona.termination_date = formatDate($event)"
+                    >
+                </td>
+            </tr>
+        </table>
+        <div class="mybuttons">
+            <button type="submit" (click)="handleSubmit()" [class.hidden]="url==='delete' || url==='select'">Enviar</button>
+            <button type="button" (click)="handleDelete()" [class.hidden]="url!=='delete'">Eliminar</button>
+            <button type="reset" [class.hidden]="url==='delete' || url==='select'">Limpiar</button>
+            <button type="button" (click)="goBack()">{{(url==='select')?'Cerrar':'Cancelar'}}</button>
+        </div>
+    </form>
+</div>

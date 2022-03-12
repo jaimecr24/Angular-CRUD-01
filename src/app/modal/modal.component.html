@@ -1,5 +1,6 @@
 <div class="custom-modal" *ngIf="persona">
     <div class="custom-modal-content">
+        <div class="title">Detalle persona</div>
         <table>
             <tr>
                 <td>Id: </td>
@@ -51,6 +52,8 @@
                 </td>
             </tr>
         </table>
-        <button (click)="close.emit()">Cerrar</button>
+        <div class="mybuttons">
+            <button (click)="close.emit()">Cerrar</button>
+        </div>
     </div>
 </div>

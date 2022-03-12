@@ -3,3 +3,23 @@ body {
     background-color: #2A3132;
     color: #F9F9F9;
 }
+
+button {
+    font-size: 1.1rem;
+    border-radius: 15px;
+    padding: 3px 10px 3px 10px;
+}
+
+input {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    background-color: #336B87;
+    color: #F9F9F9;
+    border-color: grey;
+    border-style: inset;
+    padding: 2px 5px 2px 5px;
+}
+
+.hidden {
+    display:none;
+}
