@@ -57,7 +57,7 @@ export class PersonaService {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
       console.error(error.error.message);
-      this.log(error.error.message);
+      this.log((error.error.message)?error.error.message:error.message);
       return of(result as T);
     }
   }
