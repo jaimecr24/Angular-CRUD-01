@@ -1,0 +1,17 @@
+.custom-modal-content {
+    background-color: #763626;
+    margin-top: 200px;
+}
+
+.listMessages {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.2rem;
+    padding: 20px 10px 20px 10px;
+}
+
+.mybuttons {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}

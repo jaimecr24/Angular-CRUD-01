@@ -64,9 +64,11 @@ export class FormPersonaComponent implements OnInit {
     if (this.url=='add') {
       this.personaService.addPersona(this.persona!).
         subscribe(data => {
-          this.persona!.id_persona = data.id_persona;
-          alert("Persona añadida con id: "+data.id_persona);
-          this.goBack();
+          if (data) {
+            this.persona!.id_persona = data.id_persona;
+            alert("Persona añadida con id: "+data.id_persona);
+            this.goBack();
+          }
         });
     }
     else {

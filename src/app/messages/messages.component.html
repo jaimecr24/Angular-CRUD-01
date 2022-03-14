@@ -1,0 +1,11 @@
+<div *ngIf="messageService.messages.length">
+    <div class="custom-modal">
+        <div class="custom-modal-content">
+            <div class="title">Error</div>
+            <div class="listMessages" *ngFor='let message of messageService.messages'> {{message}} </div>
+            <div class="mybuttons">
+                <button type="button" (click)="messageService.clear()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

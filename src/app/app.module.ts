@@ -8,6 +8,7 @@ import { HomeComponent, NamePipe } from './home/home.component';
 import { ModalComponent } from './modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FormPersonaComponent } from './form-persona/form-persona.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormPersonaComponent } from './form-persona/form-persona.component';
     HomeComponent,
     ModalComponent,
     FormPersonaComponent,
-    NamePipe
+    NamePipe,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

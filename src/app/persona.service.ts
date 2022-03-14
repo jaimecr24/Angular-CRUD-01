@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of, catchError, tap } from 'rxjs';
 import { Persona, PersonaLista } from './persona';
+import { MessageService } from './message.service';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class PersonaService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    private http: HttpClient,
+    private messageService: MessageService) { }
 
   getPersonas(): Observable<PersonaLista> {
     return this.http.get<PersonaLista>(this.personaUrl)
@@ -54,7 +57,12 @@ export class PersonaService {
     return (error: any): Observable<T> => {
       console.error(`${operation} failed: ${error.message}`);
       console.error(error.error.message);
+      this.log(error.error.message);
       return of(result as T);
     }
+  }
+  
+  private log(message: string) {
+    this.messageService.add(message);
   }
 }
